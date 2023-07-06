@@ -1,7 +1,33 @@
+import { useState } from 'react';
 import listIcon from '../assets/icon-list.svg';
+import validator from 'validator';
 const Form = () => {
+	// const [valid, setValid] = useState(false);
+	const [message, setMessage] = useState('');
+	const [email, setEmail] = useState('');
+
+	const validateEmail = e => {
+		setEmail(e.target.value);
+
+		let email = e.target.value;
+
+		if (validator.isEmail(email)) {
+			setMessage(null);
+		} else {
+			setMessage('Valid email required');
+		}
+	};
+
+	const handleSubmit = e => {
+		e.preventDefault();
+		if (message !== '') {
+			setEmail('');
+		} else {
+			return;
+		}
+	};
 	return (
-		<form className="Form">
+		<form className="Form" onSubmit={handleSubmit}>
 			<div className="Form__text">
 				<h1>Stay updated!</h1>
 				<p>Join 60,000+ product managers receiving monthly updates on:</p>
@@ -27,12 +53,18 @@ const Form = () => {
 				</ul>
 			</div>
 			<div className="Form__input">
-				<label htmlFor="email">Email address</label>
+				<label htmlFor="email" aria-required>
+					Email address
+					<span className="error">{message !== '' && message}</span>
+				</label>
 				<input
-					type="email"
+					className={`Form__input--email ${message !== '' ? 'error' : ''}`}
+					type="text"
 					name="email"
 					id="email"
 					placeholder="email@company.com"
+					value={email}
+					onChange={e => validateEmail(e)}
 				/>
 			</div>
 

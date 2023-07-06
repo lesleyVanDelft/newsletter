@@ -5,14 +5,14 @@
 	// form text content
 	&__text {
 		color: c.$grayLighter;
-		margin-bottom: 1rem;
+		margin-bottom: 2rem;
 		h1 {
 			font-size: 2.6rem;
 			margin-top: 1.3rem;
 		}
 
 		p {
-			margin: 2rem 0;
+			margin: 2rem 0 1.5rem 0;
 			line-height: 1.4;
 		}
 
@@ -22,7 +22,7 @@
 			li {
 				display: flex;
 				align-items: flex-start;
-				margin-bottom: 1rem;
+				margin-bottom: 0.8rem;
 				line-height: 1.5;
 
 				span {
@@ -36,16 +36,21 @@
 	&__input {
 		display: flex;
 		flex-direction: column;
-		// margin-top: 1rem;
 		label {
 			font-weight: 600;
-			font-size: 0.9rem;
+			font-size: 0.8rem;
 			color: c.$grayLighter;
-			// opacity: 1;
 			margin-bottom: 0.5rem;
+			// width: 100%;
+			display: flex;
+			justify-content: space-between;
+			.error {
+				color: c.$tomato;
+				// text-align: right;
+			}
 		}
 
-		input {
+		&--email {
 			border: 1px solid rgba(128, 128, 128, 0.37);
 			border-radius: 5px;
 			padding: 1.2rem;
@@ -54,6 +59,11 @@
 				opacity: 0.6;
 				font-family: inherit;
 				font-size: 0.9rem;
+			}
+
+			&.error {
+				background-color: lighten(c.$tomato, 20%);
+				border: 1px solid lighten(c.$tomato, 5%);
 			}
 		}
 	}
