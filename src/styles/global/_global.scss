@@ -1,3 +1,5 @@
+@use '../global/colors.scss' as c;
+
 *,
 *::after,
 *::before {
@@ -6,8 +8,13 @@
 	box-sizing: border-box;
 }
 
+#root {
+	// height: 100svh;
+}
+
 html {
 	font-family: 'Roboto', sans-serif;
+	background-color: c.$white;
 }
 @media (prefers-reduced-motion: no-preference) {
 	html {

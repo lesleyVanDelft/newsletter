@@ -1,3 +1,4 @@
+import listIcon from '../assets/icon-list.svg';
 const Form = () => {
 	return (
 		<form className="Form">
@@ -5,9 +6,24 @@ const Form = () => {
 				<h1>Stay updated!</h1>
 				<p>Join 60,000+ product managers receiving monthly updates on:</p>
 				<ul className="Form__text--list">
-					<li>Product discovery and building what matters</li>
-					<li>Measuring to ensure updates are a success</li>
-					<li>And much more!</li>
+					<li>
+						<span>
+							<img src={listIcon} alt="Checkmark icon" />
+						</span>
+						Product discovery and building what matters
+					</li>
+					<li>
+						<span>
+							<img src={listIcon} alt="Checkmark icon" />
+						</span>
+						Measuring to ensure updates are a success
+					</li>
+					<li>
+						<span>
+							<img src={listIcon} alt="Checkmark icon" />
+						</span>
+						And much more!
+					</li>
 				</ul>
 			</div>
 			<div className="Form__input">

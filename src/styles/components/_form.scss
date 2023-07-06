@@ -1,8 +1,74 @@
 @use '../global/colors.scss' as c;
 .Form {
-	// background-color: red;
+	padding: 0 2rem;
 
+	// form text content
 	&__text {
 		color: c.$grayLighter;
+		margin-bottom: 1rem;
+		h1 {
+			font-size: 2.6rem;
+			margin-top: 1.3rem;
+		}
+
+		p {
+			margin: 2rem 0;
+			line-height: 1.4;
+		}
+
+		&--list {
+			list-style: none;
+
+			li {
+				display: flex;
+				align-items: flex-start;
+				margin-bottom: 1rem;
+				line-height: 1.5;
+
+				span {
+					margin-right: 1rem;
+				}
+			}
+		}
+	}
+
+	// form input fields
+	&__input {
+		display: flex;
+		flex-direction: column;
+		// margin-top: 1rem;
+		label {
+			font-weight: 600;
+			font-size: 0.9rem;
+			color: c.$grayLighter;
+			// opacity: 1;
+			margin-bottom: 0.5rem;
+		}
+
+		input {
+			border: 1px solid rgba(128, 128, 128, 0.37);
+			border-radius: 5px;
+			padding: 1.2rem;
+			padding-left: 0.8rem;
+			&::placeholder {
+				opacity: 0.6;
+				font-family: inherit;
+				font-size: 0.9rem;
+			}
+		}
+	}
+
+	// form submit button
+	&__button {
+		width: 100%;
+		padding: 1.2rem;
+		border: none;
+		background-color: c.$grayDark;
+		color: c.$white;
+		border-radius: 5px;
+		font-family: inherit;
+		font-weight: 500;
+		font-size: 0.95rem;
+		margin-top: 1.5rem;
 	}
 }
