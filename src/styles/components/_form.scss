@@ -1,0 +1,8 @@
+@use '../global/colors.scss' as c;
+.Form {
+	// background-color: red;
+
+	&__text {
+		color: c.$grayLighter;
+	}
+}
