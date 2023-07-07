@@ -5,14 +5,14 @@
 	// form text content
 	&__text {
 		color: c.$grayLighter;
-		margin-bottom: 2rem;
+		margin-bottom: 2.2rem;
 		h1 {
 			font-size: 2.6rem;
 			margin-top: 1.3rem;
 		}
 
 		p {
-			margin: 2rem 0 1.5rem 0;
+			margin: 1.3rem 0 1.7rem 0;
 			line-height: 1.4;
 		}
 
@@ -22,7 +22,7 @@
 			li {
 				display: flex;
 				align-items: flex-start;
-				margin-bottom: 0.8rem;
+				margin-bottom: 1rem;
 				line-height: 1.5;
 
 				span {
@@ -59,6 +59,11 @@
 				opacity: 0.6;
 				font-family: inherit;
 				font-size: 0.9rem;
+			}
+
+			&:focus {
+				border: 1px solid rgba(128, 128, 128, 0.37);
+				outline: 1px solid rgba(128, 128, 128, 0.37);
 			}
 
 			&.error {

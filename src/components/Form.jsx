@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import listIcon from '../assets/icon-list.svg';
 import validator from 'validator';
 const Form = () => {
-	// const [valid, setValid] = useState(false);
+	const [valid, setValid] = useState(false);
 	const [message, setMessage] = useState('');
 	const [email, setEmail] = useState('');
 
@@ -12,7 +12,8 @@ const Form = () => {
 		let email = e.target.value;
 
 		if (validator.isEmail(email)) {
-			setMessage(null);
+			setMessage('');
+			// setEmail('');
 		} else {
 			setMessage('Valid email required');
 		}
@@ -20,14 +21,23 @@ const Form = () => {
 
 	const handleSubmit = e => {
 		e.preventDefault();
-		if (message !== '') {
+		if (email !== '') {
 			setEmail('');
+			// setMessage('');
+			// setValid(true);
+			// console.log(message);
 		} else {
 			return;
 		}
 	};
+
+	useEffect(() => {
+		message !== '' && setValid(true);
+		console.log(message);
+		console.log(valid);
+	}, [message]);
 	return (
-		<form className="Form" onSubmit={handleSubmit}>
+		<form className="Form" onSubmit={e => handleSubmit(e)}>
 			<div className="Form__text">
 				<h1>Stay updated!</h1>
 				<p>Join 60,000+ product managers receiving monthly updates on:</p>
